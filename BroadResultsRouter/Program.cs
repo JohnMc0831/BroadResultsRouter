@@ -29,9 +29,9 @@ namespace BroadResultsRouter
         static void CheckForResults()
         {
             string msg = string.Empty;
-            const string dropBoxPath = @"C:\JRMTemp\DropBoxBroad\";
+            const string dropBoxPath = @"\\fahc.fletcherallen.org\shared\Apps\Epic Build\Broad";
             msg = $"New results files will be copied to {dropBoxPath}";
-            Log.Information(msg);
+            Log.Warning(msg);
             //pull each results csv file and check if it is in the results table in the db.  If not, add it.
             var downloadBucket = "vt-reports-prod";
             string objectName = string.Empty;
@@ -44,7 +44,7 @@ namespace BroadResultsRouter
                 {
                     var appRoot = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
                     var saveFilePath = Path.Combine(appRoot, "priorResults", storageObject.Name);
-                    Log.Information($"Found csv results file {storageObject.Name}");
+                    Log.Warning($"Found csv results file {storageObject.Name}");
                     if(!File.Exists(saveFilePath)) //not already downloaded....
                     {
                         using (var outputFile = System.IO.File.OpenWrite(saveFilePath))
@@ -53,7 +53,7 @@ namespace BroadResultsRouter
                             {
                                 storage.DownloadObject(downloadBucket, storageObject.Name, outputFile);
                                 msg = @"Downloaded csv results file {storageObject.Name}";
-                                Log.Information(msg);
+                                Log.Warning(msg);
                             }
                             catch (Exception wtf)
                             {
@@ -66,7 +66,7 @@ namespace BroadResultsRouter
                         {
                             File.Copy(saveFilePath, Path.Combine(dropBoxPath, Path.GetFileName(saveFilePath)));
                              msg = $"Successfully copied csv results file to {dropBoxPath}";
-                            Log.Information(msg);
+                            Log.Warning(msg);
                         }
                         catch (Exception wtf)
                         {
@@ -80,7 +80,7 @@ namespace BroadResultsRouter
                     }
                 }
             }
-            Log.Information("BroadResultsRouter has completed!");
+            Log.Warning("BroadResultsRouter has completed!");
         }
     }
 }
