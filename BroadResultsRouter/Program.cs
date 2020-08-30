@@ -23,38 +23,13 @@ namespace BroadResultsRouter
                 .ReadFrom.Configuration(configuration)
                 .CreateLogger();
 
-            CheckForResults(@"D:\BroadResultsRouter\test.csv");
+            CheckForResults();
         }
 
-        static void CheckForResults(string path = "")
+        static void CheckForResults()
         {
-            //const string dropBoxPath = @"\\fahc.fletcherallen.org\shared\Apps\Epic Build\Broad";
-            const string dropBoxPath = @"D:\Broad";
             string msg = string.Empty;
-
-            if (!string.IsNullOrEmpty(path))
-            {
-                //Just for testing; Don't pull from google but take hardcoded path/file instead.
-                //copy the new results to the share location for GA to pickup.
-                try
-                {
-
-                    //TODO:  Rewrite names
-                    string saveFilePath = path;
-                    string tmpFile = Path.Combine(Path.GetTempPath(), "test.csv");
-                    File.Move(saveFilePath, tmpFile, true);
-                    FixMrns(tmpFile, saveFilePath);
-                    File.Copy(saveFilePath, Path.Combine(dropBoxPath, Path.GetFileName(saveFilePath)));
-                    msg = $"Successfully copied csv results file to {dropBoxPath}";
-                    Log.Warning(msg);
-                }
-                catch (Exception wtf)
-                {
-                    Log.Error(wtf.Message);
-                }
-                return;
-            }
-
+            const string dropBoxPath = @"\\fahc.fletcherallen.org\shared\Apps\Epic Build\Broad";
             msg = $"New results files will be copied to {dropBoxPath}";
             Log.Warning(msg);
             //pull each results csv file and check if it is in the results table in the db.  If not, add it.
@@ -89,10 +64,6 @@ namespace BroadResultsRouter
                         //copy the new results to the share location for GA to pickup.
                         try
                         {
-                            //TODO:  Rewrite names
-                            string tmpFile = Path.Combine(Path.GetDirectoryName(saveFilePath), "TEMP.CSV");
-                            File.Move(saveFilePath, tmpFile);
-                            FixMrns(tmpFile, saveFilePath);
                             File.Copy(saveFilePath, Path.Combine(dropBoxPath, Path.GetFileName(saveFilePath)));
                              msg = $"Successfully copied csv results file to {dropBoxPath}";
                             Log.Warning(msg);
@@ -109,36 +80,7 @@ namespace BroadResultsRouter
                     }
                 }
             }
-            Log.Information("BroadResultsRouter has completed!");
-        }
-
-        public static void FixMrns(string inputFile, string outputFile)
-        {
-            Log.Information("MRN Checker has initiated a scan!");
-            int counter = 0;
-            string line;
-            bool badMrnFormatFound = false;
-            // create text file for edited output
-            using (System.IO.StreamWriter finalfile = new System.IO.StreamWriter(outputFile))
-            {
-                // Read the file and display it line by line.  
-                System.IO.StreamReader file = new System.IO.StreamReader(inputFile);
-                while ((line = file.ReadLine()) != null)
-                {
-                    //System.Console.WriteLine(line);
-                    Log.Information($"READ: {line}");
-                    var parsedLine = line.Split(",");
-                    badMrnFormatFound = parsedLine[1].Length < 10;
-                    var fixedMrn = parsedLine[1].Length < 10 ? parsedLine[1].PadLeft(10, '0') : parsedLine[1];
-                    string finalLine = $"{parsedLine[0]},{fixedMrn},{parsedLine[2]},{parsedLine[3]},{parsedLine[4]},{parsedLine[5]},{parsedLine[6]},{parsedLine[7]},{parsedLine[8]},{parsedLine[9]},{parsedLine[10]}";
-                    finalfile.WriteLine(finalLine);
-                    Log.Information($"WROTE: {finalLine}");
-                    counter++;                   
-                }
-                Log.Warning("PLEASE NOTE:  It appears that the patient IDs (MRNs) are not correctly formatted!");
-                Log.Information($"Wrote {counter} lines to new file {inputFile}.");
-                file.Close();
-            }
+            Log.Warning("BroadResultsRouter has completed!");
         }
     }
 }
