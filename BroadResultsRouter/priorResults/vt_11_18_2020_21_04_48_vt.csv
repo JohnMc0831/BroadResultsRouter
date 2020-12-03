@@ -1,0 +1,2 @@
+sample_id,patient_id,patient_name,institution_id,physician,time_collected,specimen_type,time_completed,result,reason,matrix_id
+11140219,0010152018,Peyton Laperle,VT,,11/16/2020 00:00,,11/18/2020 19:54:39,POS,Positive for detection of 2019-novel Coronavirus (2019-nCoV) by qRT-PCR.,

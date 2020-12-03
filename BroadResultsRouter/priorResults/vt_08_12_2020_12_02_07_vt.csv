@@ -1,0 +1,8 @@
+sample_id,patient_id,patient_name,institution_id,physician,time_collected,specimen_type,time_completed,result,reason,matrix_id
+12013306,17410788,William Blaise,VT,,8/11/20,,,CANCELED,Testing canceled per submitter.,
+12013305,17896135,Calvin Jackson,VT,,8/11/20,,,CANCELED,Testing canceled per submitter.,
+12013304,3562881,Colleen McDonald,VT,,8/11/20,,,CANCELED,Testing canceled per submitter.,
+12013303,20415283,Harlan Martin,VT,,8/11/20,,,CANCELED,Testing canceled per submitter.,
+12013302,12591772,Tara Deshane,VT,,8/11/20,,,CANCELED,Testing canceled per submitter.,
+12013300,20411963,Philip Pulsifer,VT,,8/11/20,,,CANCELED,Testing canceled per submitter.,
+12013299,12397238,Larry Rock,VT,,8/11/20,,,CANCELED,Testing canceled per submitter.,

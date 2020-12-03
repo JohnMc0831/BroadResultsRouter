@@ -1,0 +1,2 @@
+sample_id,patient_id,patient_name,institution_id,physician,time_collected,specimen_type,time_completed,result,reason,matrix_id
+12315454,0007400914,Michael Trombly,VT,,9/11/2020,,09/14/2020 13:18:28,POS,Positive for detection of 2019-novel Coronavirus (2019-nCoV) by qRT-PCR.,1227382862

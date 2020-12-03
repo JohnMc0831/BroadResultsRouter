@@ -1,0 +1,3 @@
+sample_id,patient_id,patient_name,institution_id,physician,time_collected,specimen_type,time_completed,result,reason,matrix_id
+12425345,0020431378,Jacob Nolan,VT,,9/24/2020,,09/25/2020 06:18:27,POS,Positive for detection of 2019-novel Coronavirus (2019-nCoV) by qRT-PCR.,1227395914
+12432610,0020430584,Lazar Jankoviz,VT,,9/24/2020,,09/25/2020 06:18:31,POS,Positive for detection of 2019-novel Coronavirus (2019-nCoV) by qRT-PCR.,1227291321

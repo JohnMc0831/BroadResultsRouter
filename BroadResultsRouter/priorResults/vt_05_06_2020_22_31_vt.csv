@@ -1,0 +1,2 @@
+sample_id,patient_id,patient_name,institution_id,physician,time_collected,specimen_type,time_completed,result,reason,matrix_id
+11185214,0020380568,Trudie Marceau,VT,,5/5/2020,,05/06/2020 21:40:21,INVALID,This specimen failed to produce a valid result after two attempts. An invalid result means no nucleic acids (viral or human) were detected by qRT-PCR. Consider re-collection of specimen.,1202236727

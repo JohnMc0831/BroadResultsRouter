@@ -1,0 +1,3 @@
+sample_id,patient_id,patient_name,institution_id,physician,time_collected,specimen_type,time_completed,result,reason,matrix_id
+11129873,0020378127,"FISHER, JERRY E",VT,,4/23/2020,,04/24/2020 18:00:12,INVALID,This specimen failed to produce a valid result after two attempts. An invalid result means no nucleic acids (viral or human) were detected by qRT-PCR. Consider re-collection of specimen.,1202311793
+11129874,0020378128,"GRANT, ANNA T",VT,,4/23/2020,,04/24/2020 18:00:12,INVALID,This specimen failed to produce a valid result after two attempts. An invalid result means no nucleic acids (viral or human) were detected by qRT-PCR. Consider re-collection of specimen.,1202311813

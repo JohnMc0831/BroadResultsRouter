@@ -1,0 +1,3 @@
+sample_id,patient_id,patient_name,institution_id,physician,time_collected,specimen_type,time_completed,result,reason,matrix_id
+A00000114084,M030193,Francis Covey,VT,,11/23/2020 00:00,,11/25/2020 20:54:56,POS,Positive for detection of 2019-novel Coronavirus (2019-nCoV) by qRT-PCR.,
+111524E,100452,Kimberly Powers,VT,,11/23/2020 00:00,,11/25/2020 20:54:55,POS,Positive for detection of 2019-novel Coronavirus (2019-nCoV) by qRT-PCR.,

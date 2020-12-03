@@ -1,0 +1,2 @@
+sample_id,patient_id,patient_name,institution_id,physician,time_collected,specimen_type,time_completed,result,reason,matrix_id
+11099521,0016206591,"VITAGLIANO,MARINA",VT,,4/16/2020,,04/17/2020 06:40:13,UNSATISFACTORY_4,Unsatisfactory for 2019-novel Coronavirus (2019-nCoV) testing by PCR: insufficient volume.,1202311691

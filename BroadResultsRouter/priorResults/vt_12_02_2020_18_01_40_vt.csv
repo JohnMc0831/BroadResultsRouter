@@ -1,0 +1,2 @@
+sample_id,patient_id,patient_name,institution_id,physician,time_collected,specimen_type,time_completed,result,reason,matrix_id
+12843251,20444587,David Greer,VT,,11/30/2020 00:00,,,PENDING,,1225755877

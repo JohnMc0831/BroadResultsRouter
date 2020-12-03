@@ -1,0 +1,2 @@
+sample_id,patient_id,patient_name,institution_id,physician,time_collected,specimen_type,time_completed,result,reason,matrix_id
+11172399,20380033,"WHITE,JOHN P",VT,,5/2/2020,,05/03/2020 15:40:14,INVALID,This specimen failed to produce a valid result after two attempts. An invalid result means no nucleic acids (viral or human) were detected by qRT-PCR. Consider re-collection of specimen.,1202288161

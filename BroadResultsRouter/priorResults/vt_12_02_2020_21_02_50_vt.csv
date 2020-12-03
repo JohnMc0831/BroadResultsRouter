@@ -1,0 +1,2 @@
+sample_id,patient_id,patient_name,institution_id,physician,time_collected,specimen_type,time_completed,result,reason,matrix_id
+12860110,0007941982,Leighton Johnson,VT,,12/2/2020 00:00,,,UNSATISFACTORY_4,Unsatisfactory for 2019-novel Coronavirus (2019-nCoV) testing by PCR: insufficient volume.,

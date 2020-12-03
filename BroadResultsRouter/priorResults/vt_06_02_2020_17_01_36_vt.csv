@@ -1,0 +1,2 @@
+sample_id,patient_id,patient_name,institution_id,physician,time_collected,specimen_type,time_completed,result,reason,matrix_id
+11359625,0020388080,Ronald Smith,VT,,6/1/2020,,06/02/2020 14:40:23,NEG,2019-novel Coronavirus (2019-nCoV) not detected by the qRT-PCR assay. Consider testing for other respiratory viruses or re-collecting for 2019-nCoV testing. Note: Optimum timing for peak viral levels during infections caused by 2019-nCoV have not been determined. Collection of multiple specimens from the same patient may be necessary to detect the virus.,1197320650

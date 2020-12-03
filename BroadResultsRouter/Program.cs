@@ -4,6 +4,9 @@ using Microsoft.Extensions.Configuration;
 using Google.Cloud.Storage.V1;
 using Google.Apis.Auth.OAuth2;
 using Serilog;
+using CsvHelper;
+using System.Globalization;
+using System.Collections.Generic;
 
 namespace BroadResultsRouter
 {
@@ -44,15 +47,16 @@ namespace BroadResultsRouter
                 {
                     var appRoot = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
                     var saveFilePath = Path.Combine(appRoot, "priorResults", storageObject.Name);
-                    Log.Warning($"Found csv results file {storageObject.Name}");
+                    //Log.Warning($"Found csv results file {storageObject.Name}");
                     if(!File.Exists(saveFilePath)) //not already downloaded....
                     {
-                        using (var outputFile = System.IO.File.OpenWrite(saveFilePath))
+                        using (var outputFile = File.OpenWrite(saveFilePath))
                         {
                             try
                             {
                                 storage.DownloadObject(downloadBucket, storageObject.Name, outputFile);
-                                msg = @"Downloaded csv results file {storageObject.Name}";
+                                msg = $"Downloaded csv results file: {storageObject.Name}";
+                                Console.WriteLine(""); 
                                 Log.Warning(msg);
                             }
                             catch (Exception wtf)
@@ -61,12 +65,16 @@ namespace BroadResultsRouter
                             }
                             
                         }
+
+                        //Check the file for formatting errors...most common ones are times included with dates and no leading zeroes on MRNs. 
+                        Log.Information("Commencing error checking routines...");
+                        bool clean = CheckForErrors(saveFilePath);
+
                         //copy the new results to the share location for GA to pickup.
                         try
                         {
                             File.Copy(saveFilePath, Path.Combine(dropBoxPath, Path.GetFileName(saveFilePath)));
-                             msg = $"Successfully copied csv results file to {dropBoxPath}";
-                            Log.Warning(msg);
+                            Log.Warning($"Successfully copied csv results file to {dropBoxPath}");
                         }
                         catch (Exception wtf)
                         {
@@ -75,12 +83,62 @@ namespace BroadResultsRouter
                         
                     } else
                     {
-                        var fname = Path.GetFileName(saveFilePath);
-                        Log.Warning($"Skipping already downloaded file {fname}");
+                        Console.Write('.');
                     }
                 }
             }
-            Log.Warning("BroadResultsRouter has completed!");
+            Console.WriteLine("");
+            Log.Information("BroadResultsRouter has completed!");
+        }
+
+        static bool CheckForErrors(string inputFile)
+        {
+            bool clean = true;
+            var records = new List<ResultRow>();
+            Log.Information($"Consuming csv results file: {inputFile}");
+            using (var reader = new StreamReader(inputFile))
+            {
+                using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+                {
+                    records.AddRange(csv.GetRecords<ResultRow>());
+                }
+            }
+            Log.Information($"I just ate {records.Count} results! YUM!");
+            foreach(var row in records)
+            {
+                if(row.patient_id.Length < 10)
+                {
+                    row.patient_id = row.patient_id.PadLeft(10, '0');
+                    Log.Warning($"Found an incorrect MRN and reformatted it: {row.patient_id}");
+                    clean = false;
+                }
+
+                if(row.time_collected.Contains(":"))
+                {
+                    row.time_collected = Convert.ToDateTime(row.time_collected).ToShortDateString();
+                    Log.Warning($"Found an incorrect Date and reformatted it: {row.time_collected}");
+                    clean = false;
+                }
+
+                if (row.time_completed.Contains(":"))
+                {
+                    row.time_completed = Convert.ToDateTime(row.time_completed).ToShortDateString();
+                    Log.Warning($"Found an incorrect Date and reformatted it: {row.time_completed}");
+                    clean = false;
+                }
+
+            }
+
+            Log.Warning($"Rewriting results file {inputFile} with corrected values!");
+            using (var writer = new StreamWriter(inputFile))
+            {
+                using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+                {
+                    csv.WriteRecords(records);
+                }
+            }
+            Log.Information("Rewrite complete!");
+            return clean;
         }
     }
 }

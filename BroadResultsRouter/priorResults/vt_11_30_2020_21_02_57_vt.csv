@@ -1,0 +1,2 @@
+sample_id,patient_id,patient_name,institution_id,physician,time_collected,specimen_type,time_completed,result,reason,matrix_id
+12840495,13702725,Leigh Grace,VT,,11/30/2020 0:00,,,UNSATISFACTORY_8,Unsatisfactory for 2019-novel Coronavirus (2019-nCoV) testing by PCR: sample not received.,

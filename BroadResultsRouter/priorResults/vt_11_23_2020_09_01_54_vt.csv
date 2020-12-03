@@ -1,0 +1,6 @@
+sample_id,patient_id,patient_name,institution_id,physician,time_collected,specimen_type,time_completed,result,reason,matrix_id
+A00000114160,244457,Jerry Laik,VT,,11/20/2020 00:00,,11/23/2020 08:45:37,POS,Positive for detection of 2019-novel Coronavirus (2019-nCoV) by qRT-PCR.,
+A00000114161,92064,Brent Fuller,VT,,11/20/2020 00:00,,11/23/2020 08:45:36,POS,Positive for detection of 2019-novel Coronavirus (2019-nCoV) by qRT-PCR.,
+A00000114167,168323,Graham Willett,VT,,11/20/2020 00:00,,11/23/2020 08:45:35,POS,Positive for detection of 2019-novel Coronavirus (2019-nCoV) by qRT-PCR.,
+A00000114137,245898,Grace Lindhiem,VT,,11/20/2020 00:00,,11/23/2020 08:45:32,POS,Positive for detection of 2019-novel Coronavirus (2019-nCoV) by qRT-PCR.,
+A00000114147,200711,Nathan Romeo,VT,,11/20/2020 00:00,,11/23/2020 08:45:34,POS,Positive for detection of 2019-novel Coronavirus (2019-nCoV) by qRT-PCR.,

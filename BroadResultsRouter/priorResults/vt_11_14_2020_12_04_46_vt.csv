@@ -1,0 +1,6 @@
+sample_id,patient_id,patient_name,institution_id,physician,time_collected,specimen_type,time_completed,result,reason,matrix_id
+11120299,,Shery Pino Novoa,VT,,11/13/2020 00:00,,11/14/2020 11:54:30,POS,Positive for detection of 2019-novel Coronavirus (2019-nCoV) by qRT-PCR.,
+11120267,20440831,Makayla Blake,VT,,11/13/2020 00:00,,11/14/2020 11:54:28,NEG,2019-novel Coronavirus (2019-nCoV) not detected by the qRT-PCR assay. Consider testing for other respiratory viruses or re-collecting for 2019-nCoV testing. Note: Optimum timing for peak viral levels during infections caused by 2019-nCoV have not been determined. Collection of multiple specimens from the same patient may be necessary to detect the virus.,
+11120246_1,,Aiden Rooney,VT,,11/13/2020 00:00,,11/14/2020 11:54:25,POS,Positive for detection of 2019-novel Coronavirus (2019-nCoV) by qRT-PCR.,
+11120257_1,,Abigail Langlois,VT,,11/13/2020 00:00,,11/14/2020 11:54:25,POS,Positive for detection of 2019-novel Coronavirus (2019-nCoV) by qRT-PCR.,
+11120256,,Jackson Langlois,VT,,11/13/2020 00:00,,11/14/2020 11:54:28,POS,Positive for detection of 2019-novel Coronavirus (2019-nCoV) by qRT-PCR.,

@@ -1,0 +1,2 @@
+sample_id,patient_id,patient_name,institution_id,physician,time_collected,specimen_type,time_completed,result,reason,matrix_id
+12470025,0008864555,Suzanne Harris,VT,,9/27/2020,,09/28/2020 16:54:25,POS,Positive for detection of 2019-novel Coronavirus (2019-nCoV) by qRT-PCR.,0370885903

@@ -1,0 +1,2 @@
+sample_id,patient_id,patient_name,institution_id,physician,time_collected,specimen_type,time_completed,result,reason,matrix_id
+11455891,0002287050,Sheila Reid,VT,,6/12/2020,,06/13/2020 11:54:09,INVALID,This specimen failed to produce a valid result after two attempts. An invalid result means no nucleic acids (viral or human) were detected by qRT-PCR. Consider re-collection of specimen.,1202179973

@@ -1,0 +1,3 @@
+sample_id,patient_id,patient_name,institution_id,physician,time_collected,specimen_type,time_completed,result,reason,matrix_id
+12684036,0006049159,Carmen Bombardier,VT,,10/17/2020,,10/20/2020 23:09:28,POS,Positive for detection of 2019-novel Coronavirus (2019-nCoV) by qRT-PCR.,
+12688260,0013925359,Michael Kelley,VT,,10/18/2020,,10/20/2020 23:09:37,POS,Positive for detection of 2019-novel Coronavirus (2019-nCoV) by qRT-PCR.,

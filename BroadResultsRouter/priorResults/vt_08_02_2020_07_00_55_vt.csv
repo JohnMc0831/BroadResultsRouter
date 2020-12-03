@@ -1,0 +1,3 @@
+sample_id,patient_id,patient_name,institution_id,physician,time_collected,specimen_type,time_completed,result,reason,matrix_id
+11892575,16862054,Sarah Wentworth,VT,,7/29/2020,,,CANCELED,Testing canceled per submitter.,
+11892574,15740988,Caitlyn Leiviska,VT,,7/29/2020,,,CANCELED,Testing canceled per submitter.,

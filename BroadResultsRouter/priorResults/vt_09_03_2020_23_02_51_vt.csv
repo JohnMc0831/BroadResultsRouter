@@ -1,0 +1,3 @@
+sample_id,patient_id,patient_name,institution_id,physician,time_collected,specimen_type,time_completed,result,reason,matrix_id
+12225434,0000403121,Kendra Dowen,VT,,9/2/2020,,09/03/2020 20:36:23,POS,Positive for detection of 2019-novel Coronavirus (2019-nCoV) by qRT-PCR.,1202338966
+12225425,0015052483,Walker Bean,VT,,9/2/2020,,09/03/2020 20:36:28,POS,Positive for detection of 2019-novel Coronavirus (2019-nCoV) by qRT-PCR.,1202338962

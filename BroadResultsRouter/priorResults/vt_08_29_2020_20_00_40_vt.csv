@@ -1,0 +1,2 @@
+sample_id,patient_id,patient_name,institution_id,physician,time_collected,specimen_type,time_completed,result,reason,matrix_id
+12182139,0012400636,Shane Adkins,VT,,8/28/2020,,,UNSATISFACTORY_8,Unsatisfactory for 2019-novel Coronavirus (2019-nCoV) testing by PCR: sample not received.,

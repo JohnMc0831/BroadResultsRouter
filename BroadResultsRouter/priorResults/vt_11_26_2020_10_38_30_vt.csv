@@ -1,0 +1,5 @@
+sample_id,patient_id,patient_name,institution_id,physician,time_collected,specimen_type,time_completed,result,reason,matrix_id
+A00000114080,M067379,Lyndal Lumbra,VT,,11/23/2020 00:00,,11/26/2020 09:45:57,POS,Positive for detection of 2019-novel Coronavirus (2019-nCoV) by qRT-PCR.,
+111694M,M071895,Michael Richardson,VT,,11/23/2020 00:00,,11/26/2020 09:45:52,POS,Positive for detection of 2019-novel Coronavirus (2019-nCoV) by qRT-PCR.,
+111522C,78066,Sean Lindley,VT,,11/23/2020 00:00,,11/26/2020 09:45:58,POS,Positive for detection of 2019-novel Coronavirus (2019-nCoV) by qRT-PCR.,
+111579O,57255,Shane R Parker,VT,,11/23/2020 00:00,,11/26/2020 09:45:54,INVALID,This specimen failed to produce a valid result after two attempts. An invalid result means no nucleic acids (viral or human) were detected by qRT-PCR. Consider re-collection of specimen.,

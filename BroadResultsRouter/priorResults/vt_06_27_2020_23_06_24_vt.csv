@@ -1,0 +1,2 @@
+sample_id,patient_id,patient_name,institution_id,physician,time_collected,specimen_type,time_completed,result,reason,matrix_id
+11585699,2210680,Margaret Elmigermattes,VT,,6/26/2020,,,UNSATISFACTORY_5,Unsatisfactory for 2019-novel Coronavirus (2019-nCoV) testing by PCR: tube sample data does not match the submission form.,

@@ -1,0 +1,17 @@
+sample_id,patient_id,patient_name,institution_id,physician,time_collected,specimen_type,time_completed,result,reason,matrix_id
+11397279,0002849867,Patricia Smith,VT,,6/5/2020,,06/06/2020 12:54:16,POS,Positive for detection of 2019-novel Coronavirus (2019-nCoV) by qRT-PCR.,1202328779
+11407281,20389805,Robert Lincoln,VT,,6/5/2020,,,UNSATISFACTORY_5,Unsatisfactory for 2019-novel Coronavirus (2019-nCoV) testing by PCR: tube sample data does not match the submission form.,
+11407282,20389806,Lawrence Cabana,VT,,6/5/2020,,,UNSATISFACTORY_5,Unsatisfactory for 2019-novel Coronavirus (2019-nCoV) testing by PCR: tube sample data does not match the submission form.,
+11407287,3581105,Karen Sweenor,VT,,6/5/2020,,,UNSATISFACTORY_5,Unsatisfactory for 2019-novel Coronavirus (2019-nCoV) testing by PCR: tube sample data does not match the submission form.,
+11407286,20389807,Kelly Penfield,VT,,6/5/2020,,,UNSATISFACTORY_5,Unsatisfactory for 2019-novel Coronavirus (2019-nCoV) testing by PCR: tube sample data does not match the submission form.,
+11407289,5817978,Robert Blaise,VT,,6/5/2020,,,UNSATISFACTORY_5,Unsatisfactory for 2019-novel Coronavirus (2019-nCoV) testing by PCR: tube sample data does not match the submission form.,
+11407293,20389810,Mary Ellen Laporte,VT,,6/5/2020,,,UNSATISFACTORY_5,Unsatisfactory for 2019-novel Coronavirus (2019-nCoV) testing by PCR: tube sample data does not match the submission form.,
+11407294,15666662,Tammy Arsenault,VT,,6/5/2020,,,UNSATISFACTORY_5,Unsatisfactory for 2019-novel Coronavirus (2019-nCoV) testing by PCR: tube sample data does not match the submission form.,
+11407290,11040433,Chad Sample,VT,,6/5/2020,,,UNSATISFACTORY_5,Unsatisfactory for 2019-novel Coronavirus (2019-nCoV) testing by PCR: tube sample data does not match the submission form.,
+11407285,17691411,Lisa Keyes,VT,,6/5/2020,,,UNSATISFACTORY_5,Unsatisfactory for 2019-novel Coronavirus (2019-nCoV) testing by PCR: tube sample data does not match the submission form.,
+11407283,14056774,Marvin Ransom Sr.,VT,,6/5/2020,,,UNSATISFACTORY_5,Unsatisfactory for 2019-novel Coronavirus (2019-nCoV) testing by PCR: tube sample data does not match the submission form.,
+11407291,20389808,Alexxa Arrington,VT,,6/5/2020,,,UNSATISFACTORY_5,Unsatisfactory for 2019-novel Coronavirus (2019-nCoV) testing by PCR: tube sample data does not match the submission form.,
+11407280,17333725,Thomas Kelley,VT,,6/5/2020,,,UNSATISFACTORY_5,Unsatisfactory for 2019-novel Coronavirus (2019-nCoV) testing by PCR: tube sample data does not match the submission form.,
+11407292,12571337,Tia Arzola,VT,,6/5/2020,,,UNSATISFACTORY_5,Unsatisfactory for 2019-novel Coronavirus (2019-nCoV) testing by PCR: tube sample data does not match the submission form.,
+11407288,15898703,Dennis Mitchell,VT,,6/5/2020,,,UNSATISFACTORY_5,Unsatisfactory for 2019-novel Coronavirus (2019-nCoV) testing by PCR: tube sample data does not match the submission form.,
+11407284,16600017,Erena Fulton,VT,,6/5/2020,,,UNSATISFACTORY_5,Unsatisfactory for 2019-novel Coronavirus (2019-nCoV) testing by PCR: tube sample data does not match the submission form.,
