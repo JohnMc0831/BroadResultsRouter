@@ -120,13 +120,6 @@ namespace BroadResultsRouter
                     clean = false;
                 }
 
-                if (row.time_completed.Contains(":"))
-                {
-                    row.time_completed = Convert.ToDateTime(row.time_completed).ToShortDateString();
-                    Log.Warning($"Found an incorrect Date and reformatted it: {row.time_completed}");
-                    clean = false;
-                }
-
             }
 
             Log.Warning($"Rewriting results file {inputFile} with corrected values!");
