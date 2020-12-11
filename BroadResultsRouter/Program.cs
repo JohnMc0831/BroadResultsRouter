@@ -113,13 +113,23 @@ namespace BroadResultsRouter
                     clean = false;
                 }
 
-                if(row.time_collected.Contains(":"))
+                if (row.time_collected.Contains(":"))
                 {
+                    string badDate = row.time_collected;
                     row.time_collected = Convert.ToDateTime(row.time_collected).ToShortDateString();
-                    Log.Warning($"Found an incorrect Date and reformatted it: {row.time_collected}");
+                    Log.Warning($"Found an incorrect Date {badDate} and reformatted it: {row.time_collected}");
                     clean = false;
                 }
 
+                //Ensure date/time format for time_completed is something the IEngine can swallow.  MUST BE THIS FORMAT:  MM/dd/yyyy HH:mm
+                DateTime newDate;
+
+                if (!DateTime.TryParseExact(row.time_completed, "MM/dd/yyyy HH:mm", CultureInfo.CurrentCulture, DateTimeStyles.None, out newDate))
+                {
+                    var origTC = row.time_completed;
+                    row.time_completed = Convert.ToDateTime(row.time_completed).ToString("MM/dd/yyyy HH:mm");
+                    Log.Information($"Time Completed CONVERTED from {origTC} to {row.time_completed}");
+                }
             }
 
             Log.Warning($"Rewriting results file {inputFile} with corrected values!");
