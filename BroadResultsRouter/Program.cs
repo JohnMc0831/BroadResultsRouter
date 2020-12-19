@@ -27,6 +27,7 @@ namespace BroadResultsRouter
                 .CreateLogger();
 
             CheckForResults();
+            //CheckForErrors(@"D:\JRMTemp\vt_12_19_2020_12_02_06_vt.csv");
         }
 
         static void CheckForResults()
@@ -116,19 +117,48 @@ namespace BroadResultsRouter
                 if (row.time_collected.Contains(":"))
                 {
                     string badDate = row.time_collected;
-                    row.time_collected = Convert.ToDateTime(row.time_collected).ToShortDateString();
-                    Log.Warning($"Found an incorrect Date {badDate} and reformatted it: {row.time_collected}");
+                    if (!row.time_collected.Contains("/"))
+                    {
+                        //Excel raw data value.  Convert it.
+                        int intDate;
+                        string noTime = row.time_collected.Substring(0, row.time_collected.IndexOf(" "));
+                        bool success = Int32.TryParse(noTime, out intDate);
+                        if(success)
+                        {
+                            badDate = row.time_collected;
+                            row.time_collected = FromExcelSerialDate(intDate).ToShortDateString();
+                            Log.Warning($"Found an incorrect Excel INTEGER Date value {badDate} and reformatted it: {row.time_collected}");
+                        } else
+                        {
+                            Log.Error($"Could not convert {row.time_collected} to a valid date for patient {row.patient_name} with MRN {row.patient_id}!");
+                        }
+                        
+
+                    } else
+                    {
+                        badDate = row.time_collected;
+                        row.time_collected = Convert.ToDateTime(row.time_collected).ToShortDateString();
+                        Log.Warning($"Found an incorrect Date {badDate} and reformatted it: {row.time_collected}");
+                    }
+
                     clean = false;
                 }
 
-                //Ensure date/time format for time_completed is something the IEngine can swallow.  MUST BE THIS FORMAT:  MM/dd/yyyy HH:mm
+                //Ensure date/time format for time_completed is something the IEngine can swallow.  MUST BE THIS FORMAT:  MM/dd/yyyy HH:mm:ss
                 DateTime newDate;
 
-                if (!DateTime.TryParseExact(row.time_completed, "MM/dd/yyyy HH:mm", CultureInfo.CurrentCulture, DateTimeStyles.None, out newDate))
+                if (!DateTime.TryParseExact(row.time_completed, "MM/dd/yyyy HH:mm:ss", CultureInfo.CurrentCulture, DateTimeStyles.None, out newDate))
                 {
-                    var origTC = row.time_completed;
-                    row.time_completed = Convert.ToDateTime(row.time_completed).ToString("MM/dd/yyyy HH:mm");
-                    Log.Information($"Time Completed CONVERTED from {origTC} to {row.time_completed}");
+                    if (string.IsNullOrEmpty(row.time_completed))
+                    {
+                        Log.Information("Pending result.  No time_completed value.");
+                    }
+                    else
+                    {
+                        var origTC = row.time_completed;
+                        row.time_completed = Convert.ToDateTime(row.time_completed).ToString("MM/dd/yyyy HH:mm:ss");
+                        Log.Information($"Time Completed CONVERTED from {origTC} to {row.time_completed}");
+                    }
                 }
             }
 
@@ -142,6 +172,12 @@ namespace BroadResultsRouter
             }
             Log.Information("Rewrite complete!");
             return clean;
+        }
+
+        public static DateTime FromExcelSerialDate(int SerialDate)
+        {
+            if (SerialDate > 59) SerialDate -= 1; //Excel/Lotus 2/29/1900 bug   
+            return new DateTime(1899, 12, 31).AddDays(SerialDate);
         }
     }
 }
